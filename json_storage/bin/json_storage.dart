@@ -2,7 +2,7 @@ import 'package:json_storage/json_storage.dart';
 import 'package:json_storage/src/json_storage.dart';
 
 void main(List<String> arguments) {
-  final JsonStorage jsonStorage = JsonStorage();
+  final JsonStorage jsonStorage = JsonStorage('bin/storage.json');
 
   jsonStorage.setValue('name', 'yorrdt');
   jsonStorage.setValue('age', 999);
@@ -14,4 +14,6 @@ void main(List<String> arguments) {
 
   print(jsonStorage.contains('name'));
   print(jsonStorage.getValue('age'));
+
+  print(jsonStorage.length);
 }

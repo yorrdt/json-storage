@@ -1,17 +1,10 @@
 import 'json_file.dart';
 
 final class JsonStorage {
-  static JsonStorage? _instance;
   final JsonFile _jsonFile;
-
-  JsonStorage._internal(String path) : _jsonFile = JsonFile(path);
-
-  factory JsonStorage([String path = 'json_storage.json']) {
-    _instance ??= JsonStorage._internal(path);
-    return _instance!;
-  }
-
   Map<String, Object>? _values;
+
+  JsonStorage([String path = 'json_storage.json']) : _jsonFile = JsonFile(path);
 
   String get path => _jsonFile.path;
 
@@ -20,6 +13,10 @@ final class JsonStorage {
   List<String> get keys => List.unmodifiable(_getValues().keys);
 
   List<Object> get values => List.unmodifiable(_getValues().values);
+
+  List<Object> get entries => List.unmodifiable(_getValues().entries);
+
+  int get length => _getValues().length;
 
   Object? getValue(String key) => _getValues()[key];
 
