@@ -1,11 +1,5 @@
 {
  "name": "yorrdt",
  "age": 999,
- "isPetrolHead": true,
- "trash": [
-  "some",
-  "string",
-  "trash",
-  "here"
- ]
+ "isPetrolHead": true
 }

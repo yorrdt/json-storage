@@ -15,5 +15,7 @@ void main(List<String> arguments) {
   print(jsonStorage.contains('name'));
   print(jsonStorage.getValue('age'));
 
-  print(jsonStorage.length);
+  jsonStorage.resetValue('trash');
+
+  print(jsonStorage.entries);
 }

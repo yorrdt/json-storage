@@ -20,7 +20,15 @@ final class JsonStorage {
 
   Object? getValue(String key) => _getValues()[key];
 
-  Map<String, Object> _getValues() => _values ??= _jsonFile.read() ?? {};
+  int? getInt(String key) => getValue(key) as int?;
+
+  bool? getBool(String key) => getValue(key) as bool?;
+
+  double? getDouble(String key) => getValue(key) as double?;
+
+  String? getString(String key) => getValue(key) as String?;
+
+  List<Object?>? getList(String key) => getValue(key) as List<Object?>?;
 
   void setValue(String key, Object? value) async {
     if (value == null) {
@@ -44,4 +52,6 @@ final class JsonStorage {
       _jsonFile.write(values);
     }
   }
+
+  Map<String, Object> _getValues() => _values ??= _jsonFile.read() ?? {};
 }
